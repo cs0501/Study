@@ -1,0 +1,13 @@
+<view class="container">
+    <view class="history-item" wx:for="{{15}}">
+        <view class="time-date">
+            <text> 2021.10.05 </text>
+        </view>
+        <view class="time-begin">
+            <text> 开始时间：16:50 </text>
+        </view>
+        <view class="history-detail">
+            <text> 详情 > </text>
+        </view>
+    </view>
+</view>

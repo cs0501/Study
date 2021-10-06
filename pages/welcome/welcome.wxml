@@ -1,0 +1,7 @@
+<view class="container">
+  <view class="box">
+    <navigator class="loginCon" url="../homepage/homepage" open-type="reLaunch">
+      <view class="login"> 登录 </view>
+    </navigator>
+  </view>
+</view>

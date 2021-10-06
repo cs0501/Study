@@ -1,0 +1,17 @@
+.startGame{
+    height: 15%;
+    display: flex;
+    justify-content: center;
+  }
+  .startGame .btn-out{
+    width: 48%;
+    height: 72%;
+    background-color: rgb(201, 0, 0);
+    font-size: 46rpx;
+    font-weight: 700;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20rpx;
+  }

@@ -1,0 +1,38 @@
+
+<view class="container">
+    <view class="box">
+        <navigator class="getinR" url="/pages/history/history"> 
+            <view class="btn"> 历史记录 </view>
+        </navigator>
+        <navigator class="getinR" >
+            <view class="btn" catchtap="showLuckynum"> 欧气值 </view>
+        </navigator>
+        <navigator class="getinR" >
+            <view class="btn"> 黑名单 </view>
+        </navigator>
+    </view>
+</view>
+
+<!-- 欧气值显示弹窗部分 -->
+<block wx:if="{{luckyNumIsShow}}">
+    <view class="luckynum-box" >
+        <view class="luckynum-bg"></view>
+        <view class="luckynum-toast">
+            <view class="luckynum-bgin">
+                <view class="luckynum-close">
+                    <button class="luckynum-close-btn" catchtap="closeshowLuckynum"></button>
+                </view>
+                <view class="luckynum-tltle">
+                    <text> 您的欧气值是 </text>
+                </view>
+                <view class="luckynum-num">
+                    <text> {{luckynum}} </text>
+                </view>
+                <view class="luckynum-over"> <!-- 超越了多少玩家 -->
+                    <text class="luckynum-overper"> 超越了{{overper}}%的玩家 </text>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+

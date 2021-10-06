@@ -1,0 +1,4 @@
+
+<view class="container">
+    <view class="box" style="height: 80%; width: 100%; "></view>
+</view>

@@ -1,0 +1,35 @@
+<view class="container">
+    <view class="dice-box">
+        <view class="dice-first">
+            <view class="dicebox">
+                <image src="{{diceAddr[diceNum[1]]}}" mode="aspectFit" class="dice"></image>
+            </view>
+        </view>
+        <view class="dice-second">
+            <view class="dicebox">
+                <image src="{{diceAddr[diceNum[2]]}}" mode="aspectFit" class="dice"></image>
+            </view>
+            <view class="dicebox">
+                <image src="{{diceAddr[diceNum[3]]}}" mode="aspectFit" class="dice"></image>
+            </view>
+        </view>
+        <view class="dice-three">
+            <view class="dicebox">
+                <image src="{{diceAddr[diceNum[4]]}}" mode="aspectFit" class="dice"></image>
+            </view>
+            <view class="dicebox">
+                <image src="{{diceAddr[diceNum[5]]}}" mode="aspectFit" class="dice"></image>
+            </view>
+        </view>
+        <view class="dice-four">
+            <view class="dicebox">
+                <image src="{{diceAddr[diceNum[6]]}}" mode="aspectFit" class="dice"></image>
+            </view>
+        </view>
+    </view>
+    <view class="startbtn-box">
+        <view class="startbtn-out" bindtap="verdict">
+            <text> Verdict! </text>
+        </view>
+    </view>
+</view>

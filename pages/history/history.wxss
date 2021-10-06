@@ -1,0 +1,32 @@
+/* pages/history/history.wxss */
+.history-item {
+    width: 100%;
+    height: 160rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 30rpx;
+    margin-bottom: 10rpx;
+    background-color: white;
+}
+.container {
+    background-color: #e0edfa;
+    display: flex;
+    flex-direction: column;
+    justify-content: normal;
+}
+.time-date{
+    font-size: 36rpx;
+    padding-left: 20rpx;
+    color: #2d70e2;
+    font-weight: 550;
+}
+.time-begin{
+    padding-left: 20rpx;
+    font-size: 28rpx;
+}
+.history-detail{
+    padding-left: 85%;
+    padding-bottom: 6rpx;
+    color: #8fb1ee;
+}
