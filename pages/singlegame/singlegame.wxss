@@ -3,7 +3,7 @@ page{
     width: 100%;
     overflow: hidden;
     position: fixed;
-    background-image: url(http://photogz.photo.store.qq.com/psc?/V52HqGEv1SPyjw0BLhJM1MIHZD4Nu8tq/bqQfVz5yrrGYSXMvKr.cqbugRhz*8G*DciVdpaM1HP9em8Jthb7.QyE0r3DGkr2bKy4fisCgZPUJEM1WIRWzt6B9FdlP1vXz8fEhXLPCNhc!/b&bo=fgPQBwAAAAAREI0!&rf=viewer_311&t=5);
+    background-image: url(http://a1.qpic.cn/psc?/V51oQjGq4KOde5217OAT3E9dl33PXNeF/05RlWl8gsTOH*Z17MtCBzJa22ZUPk2ZiKQ9pXw8HgqCit6bSFX.*YJpuENLsjQeyt5nYIN0.XzIzx7nZ1KRmkw!!/b&ek=1&kp=1&pt=0&bo=nAPQB5wD0AcRADc!&tl=1&vuin=1709854798&tm=1633525200&sce=50-1-1&rf=viewer_311);
     margin: 0;
     background-size: cover;
     background-repeat: no-repeat;
@@ -37,28 +37,36 @@ page{
   .dicebox{
       height: 135rpx;
       width: 135rpx;
-      border: 2px solid hotpink;
       display: flex;
       justify-content: center;
       align-items: center;
+      position: relative;
   }
   .dice{
       width: 100%;
   }
-
+  .testback{
+      position: absolute;
+      width: 250%;
+      z-index: -1;
+  }
   .startbtn-box{
       display: flex;
       justify-content: center;
       
   }
   .startbtn-out{
-      height: 46%;
-      width: 26%;
+      height: 56%;
+      width: 32%;
       margin-top: 8%;
-      font-size: 36rpx;
-      font-weight: 600;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
   }
+.prizebox{
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 56rpx;
+    font-weight: 700;
+    color: rgba(248, 93, 21, 0.829);
+    background-color: white;
+}

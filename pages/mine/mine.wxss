@@ -52,7 +52,7 @@ page{
     left: 0px;
   }
   .luckynum-bg{
-    opacity: 0.3;
+    opacity: 0.4;
     background-color: black;
     position: absolute;
     width: 100%;
