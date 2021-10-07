@@ -9,11 +9,20 @@ Page({
      */
     data: {
         diceAddr: ["../../images/dic.gif", "../../images/dice-1.png", "../../images/dice-2.png", "../../images/dice-3.png", "../../images/dice-4.png", "../../images/dice-5.png", "../../images/dice-6.png"],
+        dicepAddr:["../../images/dice-p1.png","../../images/dice-p1.png","../../images/dice-p2.png","../../images/dice-p3.png","../../images/dice-p4.png","../../images/dice-p5.png","../../images/dice-p6.png"],
         diceNum: [0, 1, 2, 3, 4, 5, 6],
         diceCount: [0, 0, 0, 0, 0, 0, 0],
-        prize:'none'
+        prize:'none',
+        level:'Nothing',
+        resultIsShow: false,
+        disabled: true
     },
 
+    closeshowresult(){
+        this.setData({
+            resultIsShow: false
+        })
+    },
     setaa: function (x1, x2, x3, x4, x5, x6) {
         this.data.diceCount[x1]++;
         this.data.diceCount[x2]++;
@@ -21,7 +30,6 @@ Page({
         this.data.diceCount[x4]++;
         this.data.diceCount[x5]++;
         this.data.diceCount[x6]++;
-        console.log(this.data.diceCount)
         this.setData({
             'diceNum[1]': x1,
             'diceNum[2]': x2,
@@ -32,67 +40,82 @@ Page({
         })
         if(this.data.diceCount[4]==6){
             this.setData({
-                prize:'六杯红'
+                prize:'六杯红',
+                level:'状元'
             })
         }
         else if(this.data.diceCount[1]==6||this.data.diceCount[2]==6||this.data.diceCount[3]==6||this.data.diceCount[5]==6||this.data.diceCount[6]==6){
             this.setData({
-                prize:'六杯黑'
+                prize:'六杯黑',
+                level:'状元'
             })
         }
         else if(this.data.diceCount[4]==4&&this.data.diceCount[1]==2){
             this.setData({
-                prize:'状元插金花'
+                prize:'状元插金花',
+                level:'状元'
             })
         }
         else if(this.data.diceCount[4]==5){
             this.setData({
-                prize:'五王'
+                prize:'五王',
+                level:'状元'
             })
         }
         else if(this.data.diceCount[1]==5||this.data.diceCount[2]==5||this.data.diceCount[3]==5||this.data.diceCount[5]==5||this.data.diceCount[6]==5){
             this.setData({
-                prize:'五子登科'
+                prize:'五子登科',
+                level:'状元'
             })
         }
         else if(this.data.diceCount[4]==4){
             this.setData({
-                prize:'状元'
+                prize:'状元',
+                level:'状元'
             })
         }
         else if(this.data.diceCount[1]==1&&this.data.diceCount[2]==1&&this.data.diceCount[3]==1&&this.data.diceCount[5]==1&&this.data.diceCount[6]==1){
             this.setData({
-                prize:'对堂'
+                prize:'对堂',
+                level:'榜眼'
             })
         }
         else if(this.data.diceCount[4]==3){
             this.setData({
-                prize:'三红'
+                prize:'三红',
+                level:'探花'
             })
         }
         else if(this.data.diceCount[1]==4||this.data.diceCount[2]==4||this.data.diceCount[3]==4||this.data.diceCount[5]==4||this.data.diceCount[6]==4){
             this.setData({
-                prize:'四进'
+                prize:'四进',
+                level:'进士'
             })
         }
         else if(this.data.diceCount[4]==2){
             this.setData({
-                prize:'二举'
+                prize:'二举',
+                level:'举人'
             })
         }
         else if(this.data.diceCount[4]==1){
             this.setData({
-                prize:'一秀'
+                prize:'一秀',
+                level:'秀才'
             })
         }
         else{
             this.setData({
+                level:'Nothing',
                 prize:'What a shame!'
             })
         }
     },
 
     verdict() {
+        this.setData({
+            disabled: false
+        })
         for(let i=1;i<=6;i++){
             this.data.diceCount[i]=0
         }
@@ -112,9 +135,15 @@ Page({
         var x5 = (Math.random() * 600).toFixed(0) % 6 + 1
         var x6 = (Math.random() * 600).toFixed(0) % 6 + 1
         timer = setTimeout(function () {
-            console.log(x1, x2, x3, x4, x5, x6)
             that.setaa(x1, x2, x3, x4, x5, x6)
         }, 800)
+        var that=this
+        timer = setTimeout(function(){
+            that.setData({
+                resultIsShow: true,
+                disabled:true
+            })
+        },1420)
     },
 
 
