@@ -164,8 +164,8 @@ page {
   }
   
   .showresult-bgin {
-    height: 70%;
-    width: 80%;
+    height: 60%;
+    width: 90%;
     overflow: hidden;
     position: fixed;
     display: flex;
@@ -297,7 +297,7 @@ page {
   .showruler-toast {
     position: absolute;
     opacity: 1;
-    height: 75%;
+    height: 70%;
     width: 85%;
     margin-top: 12%;
     display: flex;

@@ -19,7 +19,7 @@
                 </view>
                 <view class="singleGame-headcount">
                     <text> 人数 : </text>
-                    <input class="singleGame-inputnum" bindinput="getGameNumber" placeholder="请输入游戏人数"> </input>
+                    <input class="singleGame-inputnum" bindinput="getGameNumber" placeholder="请输入游戏人数" focus="true"> </input>
                 </view>
                 <view class="singleGame-setPre"> 
                     <navigator class="btn-out" style="border: 8rpx solid white;" url="/pages/setpresent/setpresent">
