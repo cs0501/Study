@@ -1,0 +1,511 @@
+page {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    background-image: url(http://a1.qpic.cn/psc?/V51oQjGq4KOde5217OAT3E9dl33PXNeF/05RlWl8gsTOH*Z17MtCBzJa22ZUPk2ZiKQ9pXw8HgqCit6bSFX.*YJpuENLsjQeyt5nYIN0.XzIzx7nZ1KRmkw!!/b&ek=1&kp=1&pt=0&bo=nAPQB5wD0AcRADc!&tl=1&vuin=1709854798&tm=1633525200&sce=50-1-1&rf=viewer_311);
+    margin: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: -5;
+  }
+  
+  .dice-box {
+    height: 60%;
+    width: 100%;
+  }
+  
+  .startbtn-box {
+    height: 40%;
+    width: 100%;
+  }
+  
+  .dice-first,
+  .dice-second,
+  .dice-three,
+  .dice-four {
+    height: 24%;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .dice-first,
+  .dice-four {
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .dice-second,
+  .dice-three {
+    justify-content: space-between;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+  
+  .dice-three {
+    align-items: center;
+  }
+  
+  .dicebox {
+    height: 150rpx;
+    width: 150rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .dice {
+    width: 100%;
+  }
+  
+  .testback {
+    position: absolute;
+    width: 225%;
+    z-index: -1;
+  }
+
+  .playernumbox{
+    position: absolute;
+    top: 0;
+    height: 56%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .playernumbox .playernum{
+    height: 360rpx;
+    width: 360rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: fixed;
+    background-image: url(http://photogz.photo.store.qq.com/psc?/V136uVo83MAkrk/bqQfVz5yrrGYSXMvKr.cqcN96Y1A5vHQnjP.LGpzq6dPnFLeYcXie.BtqTps5URz08fMudLkI6QJJLqJXap8fw0pGXJI3DSf5kAV0Bcs3mM!/b&bo=ngCeAAAAAAADEDU!&rf=viewer_311&t=5);
+    margin: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: -5;
+  }
+  
+  /* 按钮区域 */
+  .startbtn-box {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .startbtn-out {
+    height: 56%;
+    width: 32%;
+    margin-top: 8%;
+  }
+  
+  .prizebox {
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 56rpx;
+    font-weight: 700;
+    color: rgba(248, 93, 21, 0.829);
+    background-color: white;
+  }
+  
+  /* 导航栏 */
+  .startbtn-box .headerbox{
+    opacity: 0.9;
+    position: absolute;
+    bottom: 0rpx;
+    height: 110rpx;
+    background-color: whitesmoke;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .startbtn-box .headerbox .header{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* 掷骰子结果弹窗 */
+  .showresult-box {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .showresult-bg {
+    opacity: 0.4;
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+  }
+  
+  .showresult-toast {
+    position: absolute;
+    opacity: 1;
+    width: 85%;
+    margin-top: 12%;
+    display: flex;
+    justify-content:space-around;
+  }
+  
+  .showresult-bgin {
+    height: 70%;
+    width: 80%;
+    overflow: hidden;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-image: url(http://photogz.photo.store.qq.com/psc?/V136uVo83MAkrk/bqQfVz5yrrGYSXMvKr.cqagp0nkjZlN0hABrMq7XpKE.Frmr5vEwPv1pxqvePCQWRPFIEo.eD6pmP4zeGbTktZ7R46IxZ.bfuiK5WNa9.oE!/b&bo=OATjBQAAAAADEO8!&rf=viewer_311&t=5);
+    margin: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding-top: 10%;
+    padding-bottom: 12%;
+  }
+  
+  .showresult-close {
+    height: 23%;
+  }
+  
+  .showresult-close .showresult-close-btn {
+    height: 100%;
+    width: 22%;
+    margin-left: 78%;
+    opacity: 0;
+  }
+  
+  .prize-level {
+    font-size: 40rpx;
+    font-weight: 600;
+    height: 18%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 251, 7);
+  }
+  
+  .tianchong {
+    margin-left: 10%;
+    height: 21%;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .tianchong .dice-pbox {
+    height: 80rpx;
+    width: 80rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .tianchong .dice-pbox .dice-p {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .prize-detail {
+    font-size: 65rpx;
+    font-weight: 600;
+    height: 24%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* 结果弹窗奖品部分 */
+  .overnamebox{
+    height: 100rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .overscroll1{
+    height: 280rpx;
+    display: flex;
+  }
+  .overouterbox{
+    height: 100rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10rpx;
+  }
+  .overimgbox{
+    height: 100%;
+    width: 28%;
+    display: flex;
+    justify-content: center;
+  }
+  .overimgbox .overimg{
+    height: 100%;
+    width: 50%;
+  }
+  .overpresentbox{
+    height: 100%;
+    width: 50%;
+    margin-left: 2%;
+    display: flex;
+    align-items: center;
+    font-size: 36rpx;
+  }
+
+  /* 规则弹窗 */
+  .showruler-box {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .showruler-bg {
+    opacity: 0.4;
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+  }
+  
+  .showruler-toast {
+    position: absolute;
+    opacity: 1;
+    height: 75%;
+    width: 85%;
+    margin-top: 12%;
+    display: flex;
+    justify-content: center;
+    background-image: url(https://i0.hdslb.com/bfs/album/b6bb1eabb966c0687772710b4ec5730b87b4fab3.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .closetoast{
+    height: 15%;
+    width: 20%;
+    margin-top: 10%;
+    margin-left: 80%;
+  }
+  
+  /* 关闭游戏确认弹窗 */
+  
+  .showclosecon-box {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .showclosecon-bg {
+    opacity: 0.4;
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+  }
+  
+  .showclosecon-toast {
+    position: absolute;
+    opacity: 1;
+    height: 30%;
+    width: 70%;
+    margin-top: 40%;
+    background-color: white;
+    border: 4rpx solid rgb(48, 48, 48);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 28rpx;
+  }
+  .showclosecon-toast .textbox{
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .showclosecon-toast .conbox{
+    display: flex;
+    flex-direction: row;
+    height: 30%;
+    width: 100%;
+  }
+  .showclosecon-toast .conbox .conn{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2rpx solid rgb(112, 112, 112);
+  }
+
+  /* 礼物及剩余量弹窗 */
+  .showpresent-box {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+  }
+  .showpresent-bg {
+    opacity: 0.4;
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+  }
+  .closeshowpre{
+    margin-top: 3%;
+    height: 7%;
+    width: 85%;
+    background-color: white;
+    opacity: 0.8;
+    position: absolute;
+    border-radius: 30rpx;
+  }
+  .closeshowpre .closeshowprein{
+    height: 65rpx;
+    width: 16%;
+    margin-left: 84%;
+  }
+  .showpresent-toast {
+    opacity: 0.98;
+    position: absolute;
+    height: 80%;
+    width: 85%;
+    margin-top: 12%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #91c8ff;
+  }
+  .namebox{
+    height: 100rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: 2rpx solid rgb(92, 92, 92);
+  }
+  .nameboxmin{
+    height: 50rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: 2rpx solid rgb(92, 92, 92);
+  }
+  .scroll1{
+    height: 300rpx;
+    background-color: #e0edfa;
+    display: flex;
+  }
+  /* 奖品内部组件模块 */
+  .outerbox{
+    height: 100rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    margin-top: 10rpx;
+  }
+  .imgbox{
+    height: 100%;
+    width: 28%;
+    display: flex;
+    justify-content: center;
+  }
+  .imgbox .img{
+    height: 100%;
+    width: 50%;
+  }
+  .presentbox{
+    height: 100%;
+    width: 50%;
+    margin-left: 2%;
+    display: flex;
+    align-items: center;
+    font-size: 36rpx;
+  }
+/* 奖品内部组件模块结束 */
+
+
+/* 游戏结束弹窗 */
+.showgameover-box {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.showgameover-bg {
+  opacity: 0.4;
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.showgameover-toast {
+  position: absolute;
+  opacity: 1;
+  height: 20%;
+  width: 60%;
+  margin-top: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+  border-radius: 30rpx;
+}
+.gameoverbox{
+  background-color: rgb(75, 99, 233);
+  height: 60%;
+  width: 100%;
+  border-top-right-radius: 30rpx;
+  border-top-left-radius: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.quitgame{
+  height: 40%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

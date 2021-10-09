@@ -1,0 +1,323 @@
+<block class="状元">
+    <view class="namebox">
+        <text style="width: 12%; font-weight: 600;font-size: 42rpx;"> 状元 </text>
+        <text style="width: 23%;font-size: 36rpx;">奖品数量: </text>
+        <block wx:if="{{!(PreIsShow[0]||PreIsShow[1]||PreIsShow[2]||PreIsShow[3]||PreIsShow[4]||PreIsShow[5])}}">
+            <input style=" width: 45%; background-color: whitesmoke; font-size: 36rpx;" bindinput="onePrizeNum" placeholder="请输入状元奖品总数"> </input>
+        </block>
+    </view>
+    <scroll-view scroll-y class="scroll1" scroll-top>
+        <view class="outerbox" wx:for="{{Onepre}}" wx:key="index">
+            <view class="imgbox">
+                <image src="{{item}}" mode="aspectFit" class="img"></image>
+            </view>
+            <view class="presentbox">
+                <text>{{OnepreName[index]}}</text>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="addOnebox">
+        <view class="addOneboxplus" catchtap="addNumberOne">
+            <image src="../../images/addpre.png" class="addpre" mode="aspectFit" ></image>
+        </view>
+    </view>
+</block>
+
+<block class="榜眼">
+    <view class="namebox">
+        <text style="width: 12%; font-weight: 600;font-size: 42rpx;"> 榜眼 </text>
+        <text style="width: 23%;font-size: 36rpx;">奖品数量: </text>
+        <block wx:if="{{!(PreIsShow[0]||PreIsShow[1]||PreIsShow[2]||PreIsShow[3]||PreIsShow[4]||PreIsShow[5])}}">
+            <input style=" width: 45%; background-color: whitesmoke; font-size: 36rpx;" bindinput="twoPrizeNum" placeholder="请输入榜眼奖品总数"> </input>
+        </block>
+    </view>
+    <scroll-view scroll-y class="scroll1" scroll-top>
+        <view class="outerbox" wx:for="{{Twopre}}" wx:key="index">
+            <view class="imgbox">
+                <image src="{{item}}" mode="aspectFit" class="img"></image>
+            </view>
+            <view class="presentbox">
+                <text>{{TwopreName[index]}}</text>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="addOnebox">
+        <view class="addOneboxplus" catchtap="addNumberTwo">
+            <image src="../../images/addpre.png" class="addpre" mode="aspectFit" ></image>
+        </view>
+    </view>
+</block>
+
+<block class="探花">
+    <view class="namebox">
+        <text style="width: 12%; font-weight: 600;font-size: 42rpx;"> 探花 </text>
+        <text style="width: 23%;font-size: 36rpx;">奖品数量: </text>
+        <block wx:if="{{!(PreIsShow[0]||PreIsShow[1]||PreIsShow[2]||PreIsShow[3]||PreIsShow[4]||PreIsShow[5])}}">
+            <input style=" width: 45%; background-color: whitesmoke; font-size: 36rpx;" bindinput="threePrizeNum" placeholder="请输入探花奖品总数" > </input>
+        </block>
+    </view>
+    <scroll-view scroll-y class="scroll1" scroll-top>
+        <view class="outerbox" wx:for="{{Threepre}}" wx:key="index">
+            <view class="imgbox">
+                <image src="{{item}}" mode="aspectFit" class="img"></image>
+            </view>
+            <view class="presentbox">
+                <text>{{ThreepreName[index]}}</text>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="addOnebox">
+        <view class="addOneboxplus" catchtap="addNumberThree">
+            <image src="../../images/addpre.png" class="addpre" mode="aspectFit" ></image>
+        </view>
+    </view>
+</block>
+
+<block class="进士">
+    <view class="namebox">
+        <text style="width: 12%; font-weight: 600;font-size: 42rpx;"> 进士 </text>
+        <text style="width: 23%;font-size: 36rpx;">奖品数量: </text>
+        <block wx:if="{{!(PreIsShow[0]||PreIsShow[1]||PreIsShow[2]||PreIsShow[3]||PreIsShow[4]||PreIsShow[5])}}">
+            <input style=" width: 45%; background-color: whitesmoke; font-size: 36rpx;" bindinput="fourPrizeNum" placeholder="请输入进士奖品总数"> </input>
+        </block>
+    </view>
+    <scroll-view scroll-y class="scroll1" scroll-top>
+        <view class="outerbox" wx:for="{{Fourpre}}" wx:key="index">
+            <view class="imgbox">
+                <image src="{{item}}" mode="aspectFit" class="img"></image>
+            </view>
+            <view class="presentbox">
+                <text>{{FourpreName[index]}}</text>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="addOnebox">
+        <view class="addOneboxplus" catchtap="addNumberFour">
+            <image src="../../images/addpre.png" class="addpre" mode="aspectFit" ></image>
+        </view>
+    </view>
+</block>
+
+<block class="举人">
+    <view class="namebox">
+        <text style="width: 12%; font-weight: 600;font-size: 42rpx;"> 举人 </text>
+        <text style="width: 23%;font-size: 36rpx;">奖品数量: </text>
+        <block wx:if="{{!(PreIsShow[0]||PreIsShow[1]||PreIsShow[2]||PreIsShow[3]||PreIsShow[4]||PreIsShow[5])}}">
+            <input style=" width: 45%; background-color: whitesmoke; font-size: 36rpx;" bindinput="fivePrizeNum" placeholder="请输入举人奖品总数"> </input>
+        </block>
+    </view>
+    <scroll-view scroll-y class="scroll1" scroll-top>
+        <view class="outerbox" wx:for="{{Fivepre}}" wx:key="index">
+            <view class="imgbox">
+                <image src="{{item}}" mode="aspectFit" class="img"></image>
+            </view>
+            <view class="presentbox">
+                <text>{{FivepreName[index]}}</text>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="addOnebox">
+        <view class="addOneboxplus" catchtap="addNumberFive">
+            <image src="../../images/addpre.png" class="addpre" mode="aspectFit" ></image>
+        </view>
+    </view>
+</block>
+
+<block class="秀才">
+    <view class="namebox">
+        <text style="width: 12%; font-weight: 600;font-size: 42rpx;"> 秀才 </text>
+        <text style="width: 23%;font-size: 36rpx;">奖品数量: </text>
+        <block wx:if="{{!(PreIsShow[0]||PreIsShow[1]||PreIsShow[2]||PreIsShow[3]||PreIsShow[4]||PreIsShow[5])}}">
+            <input style=" width: 45%; background-color: whitesmoke; font-size: 36rpx;" bindinput="sixPrizeNum" placeholder="请输入秀才奖品总数"> </input>
+        </block>
+    </view>
+    <scroll-view scroll-y class="scroll1" scroll-top>
+        <view class="outerbox" wx:for="{{Sixpre}}" wx:key="index">
+            <view class="imgbox">
+                <image src="{{item}}" mode="aspectFit" class="img"></image>
+            </view>
+            <view class="presentbox">
+                <text>{{SixpreName[index]}}</text>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="addOnebox">
+        <view class="addOneboxplus" catchtap="addNumberSix">
+            <image src="../../images/addpre.png" class="addpre" mode="aspectFit" ></image>
+        </view>
+    </view>
+</block>
+
+<!-- 添加奖品弹窗页面 状元 -->
+<block wx:if="{{PreIsShow[0]}}">
+    <view class="addpre-box" >
+        <view class="addpre-bg"></view>
+        <view class="addpre-toast">
+            <view class="addpre-bgin">
+                <view class="preInput">
+                    <text style="font-size: 32rpx; font-weight: 600; margin-left: 12rpx;" > 奖品名称 : </text>
+                    <input bindinput="getOnepre" placeholder="请输入奖品名" class="inputt"></input>
+                </view>
+                <view class="addimgbox">
+                    <text style="font-size: 32rpx; font-weight: 600; margin-left: 12rpx;" > 添加图片 : </text>
+                    <image class="addimg" src="{{addOnepre}}" mode="aspectFit" catchtap="addOnepresent">  </image>
+                </view>
+                <view class="conbox">
+                    <view class="coninbox" catchtap="canceladdOne">
+                        <text style="font-size: 40rpx; font-weight: 600;" > 取消 </text>
+                    </view>
+                    <view class="coninbox" catchtap="confirmaddOne">
+                        <text style="font-size: 40rpx; font-weight: 600;" > 确定 </text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+<!-- 添加奖品弹窗页面 状元 -->
+
+<!-- 添加奖品弹窗页面 榜眼 -->
+<block wx:if="{{PreIsShow[1]}}">
+    <view class="addpre-box" >
+        <view class="addpre-bg"></view>
+        <view class="addpre-toast">
+            <view class="addpre-bgin">
+                <view class="preInput">
+                    <text style="font-size: 32rpx; font-weight: 600; margin-left: 12rpx;" > 奖品名称 : </text>
+                    <input bindinput="getTwopre" placeholder="请输入奖品名" class="inputt"></input>
+                </view>
+                <view class="addimgbox">
+                    <text style="font-size: 32rpx; font-weight: 600; margin-left: 12rpx;" > 添加图片 : </text>
+                    <image class="addimg" src="{{addOnepre}}" mode="aspectFit" catchtap="addTwopresent">  </image>
+                </view>
+                <view class="conbox">
+                    <view class="coninbox" catchtap="canceladdTwo">
+                        <text style="font-size: 40rpx; font-weight: 600;" > 取消 </text>
+                    </view>
+                    <view class="coninbox" catchtap="confirmaddTwo">
+                        <text style="font-size: 40rpx; font-weight: 600;" > 确定 </text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+<!-- 添加奖品弹窗页面 榜眼 -->
+
+<!-- 添加奖品弹窗页面 探花 -->
+<block wx:if="{{PreIsShow[2]}}">
+    <view class="addpre-box" >
+        <view class="addpre-bg"></view>
+        <view class="addpre-toast">
+            <view class="addpre-bgin">
+                <view class="preInput">
+                    <text style="font-size: 32rpx; font-weight: 600; margin-left: 12rpx;" > 奖品名称 : </text>
+                    <input bindinput="getThreepre" placeholder="请输入奖品名" class="inputt"></input>
+                </view>
+                <view class="addimgbox">
+                    <text style="font-size: 32rpx; font-weight: 600; margin-left: 12rpx;" > 添加图片 : </text>
+                    <image class="addimg" src="{{addOnepre}}" mode="aspectFit" catchtap="addThreepresent">  </image>
+                </view>
+                <view class="conbox">
+                    <view class="coninbox" catchtap="canceladdThree">
+                        <text style="font-size: 40rpx; font-weight: 600;" > 取消 </text>
+                    </view>
+                    <view class="coninbox" catchtap="confirmaddThree">
+                        <text style="font-size: 40rpx; font-weight: 600;" > 确定 </text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+<!-- 添加奖品弹窗页面 探花 -->
+
+<!-- 添加奖品弹窗页面 进士 -->
+<block wx:if="{{PreIsShow[3]}}">
+    <view class="addpre-box" >
+        <view class="addpre-bg"></view>
+        <view class="addpre-toast">
+            <view class="addpre-bgin">
+                <view class="preInput">
+                    <text style="font-size: 32rpx; font-weight: 600; margin-left: 12rpx;" > 奖品名称 : </text>
+                    <input bindinput="getFourpre" placeholder="请输入奖品名" class="inputt"></input>
+                </view>
+                <view class="addimgbox">
+                    <text style="font-size: 32rpx; font-weight: 600; margin-left: 12rpx;" > 添加图片 : </text>
+                    <image class="addimg" src="{{addOnepre}}" mode="aspectFit" catchtap="addFourpresent">  </image>
+                </view>
+                <view class="conbox">
+                    <view class="coninbox" catchtap="canceladdFour">
+                        <text style="font-size: 40rpx; font-weight: 600;" > 取消 </text>
+                    </view>
+                    <view class="coninbox" catchtap="confirmaddFour">
+                        <text style="font-size: 40rpx; font-weight: 600;" > 确定 </text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+<!-- 添加奖品弹窗页面 进士 -->
+
+<!-- 添加奖品弹窗页面 举人 -->
+<block wx:if="{{PreIsShow[4]}}">
+    <view class="addpre-box" >
+        <view class="addpre-bg"></view>
+        <view class="addpre-toast">
+            <view class="addpre-bgin">
+                <view class="preInput">
+                    <text style="font-size: 32rpx; font-weight: 600; margin-left: 12rpx;" > 奖品名称 : </text>
+                    <input bindinput="getFivepre" placeholder="请输入奖品名" class="inputt"></input>
+                </view>
+                <view class="addimgbox">
+                    <text style="font-size: 32rpx; font-weight: 600; margin-left: 12rpx;" > 添加图片 : </text>
+                    <image class="addimg" src="{{addOnepre}}" mode="aspectFit" catchtap="addFivepresent">  </image>
+                </view>
+                <view class="conbox">
+                    <view class="coninbox" catchtap="canceladdFive">
+                        <text style="font-size: 40rpx; font-weight: 600;" > 取消 </text>
+                    </view>
+                    <view class="coninbox" catchtap="confirmaddFive">
+                        <text style="font-size: 40rpx; font-weight: 600;" > 确定 </text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+<!-- 添加奖品弹窗页面 举人 -->
+
+<!-- 添加奖品弹窗页面 秀才 -->
+<block wx:if="{{PreIsShow[5]}}">
+    <view class="addpre-box" >
+        <view class="addpre-bg"></view>
+        <view class="addpre-toast">
+            <view class="addpre-bgin">
+                <view class="preInput">
+                    <text style="font-size: 32rpx; font-weight: 600; margin-left: 12rpx;" > 奖品名称 : </text>
+                    <input bindinput="getSixpre" placeholder="请输入奖品名" class="inputt"></input>
+                </view>
+                <view class="addimgbox">
+                    <text style="font-size: 32rpx; font-weight: 600; margin-left: 12rpx;" > 添加图片 : </text>
+                    <image class="addimg" src="{{addOnepre}}" mode="aspectFit" catchtap="addSixpresent">  </image>
+                </view>
+                <view class="conbox">
+                    <view class="coninbox" catchtap="canceladdSix">
+                        <text style="font-size: 40rpx; font-weight: 600;" > 取消 </text>
+                    </view>
+                    <view class="coninbox" catchtap="confirmaddSix">
+                        <text style="font-size: 40rpx; font-weight: 600;" > 确定 </text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+<!-- 添加奖品弹窗页面 秀才 -->
+
+<view class="startGame">
+    <navigator class="btn-out" url="/pages/singlegame/singlegame">
+        <text> 开始游戏 </text>
+    </navigator>
+</view>

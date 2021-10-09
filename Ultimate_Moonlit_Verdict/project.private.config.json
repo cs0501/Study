@@ -1,0 +1,36 @@
+{
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "pages/singlegame/singlegame",
+                    "pathName": "pages/singlegame/singlegame",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/setpresent/setpresent",
+                    "pathName": "pages/setpresent/setpresent",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/homepage/homepage",
+                    "pathName": "pages/homepage/homepage",
+                    "query": "",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

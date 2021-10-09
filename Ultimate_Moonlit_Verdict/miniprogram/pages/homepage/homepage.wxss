@@ -1,0 +1,128 @@
+page {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    background-image: url(http://a1.qpic.cn/psc?/V51oQjGq4KOde5217OAT3E9dl33PXNeF/8v1c6OdZLSE3kzDE6fnRyrOAoU3HM6FM3HXFGFG8LxWRqfGlV5PhNzOBLmwY8G4JARb7ERD6J*WF13XP6CDCxHiJAgsZWBPyF8QS0MNRxeQ!/b&ek=1&kp=1&pt=0&bo=fgPQB34D0AcRADc!&tl=1&vuin=960868236&tm=1633284000&sce=60-4-3&rf=viewer_311);
+    margin: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: -5;
+  }
+
+  .box { 
+    margin-top: 100rpx;
+    margin-right: 50rpx;
+    justify-content: center;
+    align-items: center;
+    height: 750rpx;
+    width: 500rpx;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .singleGame {
+    height: 250rpx; 
+    width: 500rpx;
+    background-image: url(http://a1.qpic.cn/psc?/V52HqGEv1SPyjw0BLhJM1MIHZD4Nu8tq/bqQfVz5yrrGYSXMvKr.cqbN3CPF01SgvLYVJ9aQdhihbaDzg5bVb3jKhBV*HT*uPO78I8JCECW82VuPJ.WMAVTf7KCsXwjMZ4TdfDgj.q*k!/b&ek=1&kp=1&pt=0&bo=IANCAiADQgIDEDU!&tl=1&vuin=960868236&tm=1633312800&sce=60-1-1&rf=viewer_311);
+    margin: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .singleGame .btn{ 
+    height: 60%;
+    width: 320rpx;
+    text-align: center;
+    line-height: 135rpx;
+    font-size: 46rpx; 
+    font-weight: 600; 
+    color: cornflowerblue;
+    margin-left: 23%;
+    margin-top: 18%;
+  }
+
+  /* 单机模式部分 */
+  .singleGame-box{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+  }
+  .singleGame-bg{
+    opacity: 0.3;
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+  }
+  .singleGame-toast{
+    position: absolute;
+    opacity: 1;
+    width: 90%;
+    margin-top: 25%;
+  }
+  .singleGame-bgin{
+    height: 75%;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content:baseline;
+    background-image: url(http://a1.qpic.cn/psc?/V52HqGEv1SPyjw0BLhJM1MIHZD4Nu8tq/bqQfVz5yrrGYSXMvKr.cqVWfLMOrtXH7cf1cLO6UaKrUa.VXBIdlkn3i9ytTD3rYZCO0CVHpbbASNExN3rTXUePkJBD6w9Jo1gmtFzktiJU!/b&ek=1&kp=1&pt=0&bo=1AS9BtQEvQYDEDU!&tl=1&vuin=960868236&tm=1633366800&sce=60-1-1&rf=viewer_311);
+    margin: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding-top: 12%;
+    padding-bottom: 12%;
+  }
+  .singleGame-close{
+    height: 13%;
+  }
+  .singleGame-close .singleGame-close-btn{
+    height: 100%;
+    width: 100rpx;
+    margin-left: 80%;
+    opacity: 0;
+  }
+  .singleGame-headcount{
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 48rpx;
+  }
+  .singleGame-headcount .singleGame-inputnum{
+    background-color: white;
+    height: 56rpx;
+    width: 40%;
+    margin-left: 5%;
+    color: black;
+    font-size: 40rpx;
+  }
+  .singleGame-setPre{
+    margin-top: 8%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+  }
+  .singleGame-setPre .btn-out{
+    width: 48%;
+    height: 72%;
+    background-color: rgb(201, 0, 0);
+    font-size: 46rpx;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20rpx;
+  }
+

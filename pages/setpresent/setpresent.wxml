@@ -1,5 +1,0 @@
-<view class="startGame">
-    <navigator class="btn-out" url="/pages/singlegame/singlegame">
-        <text> 设置礼物 </text>
-    </navigator>
-</view>

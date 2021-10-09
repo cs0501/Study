@@ -1,0 +1,1 @@
+"D:\微信web开发者工具\cli.bat" cloud functions deploy --e judgement-0gyr4tda3d15dbe9 --n quickstartFunctions --r --project "D:\微信小程序\Ultimate_Moonlit_Verdict" --report_first --report

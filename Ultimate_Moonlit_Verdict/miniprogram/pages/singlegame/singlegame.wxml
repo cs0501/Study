@@ -1,0 +1,386 @@
+<view class="container">
+    <view class="dice-box">
+        <view class="dice-first">
+            <view class="dicebox">
+                <image src="{{diceAddr[diceNum[1]]}}" mode="aspectFit" class="dice"></image>
+                <image src="../../images/diceback.gif" mode="aspectFit" class="testback"></image>
+            </view>
+        </view>
+        <view class="dice-second">
+            <view class="dicebox">
+                <image src="{{diceAddr[diceNum[2]]}}" mode="aspectFit" class="dice"></image>
+                <image src="../../images/diceback.gif" mode="aspectFit" class="testback"></image>
+            </view>
+            <view class="dicebox">
+                <image src="{{diceAddr[diceNum[3]]}}" mode="aspectFit" class="dice"></image>
+                <image src="../../images/diceback.gif" mode="aspectFit" class="testback"></image>
+            </view>
+        </view>
+        <view class="dice-three">
+            <view class="dicebox">
+                <image src="{{diceAddr[diceNum[4]]}}" mode="aspectFit" class="dice"></image>
+                <image src="../../images/diceback.gif" mode="aspectFit" class="testback"></image>
+            </view>
+            <view class="dicebox">
+                <image src="{{diceAddr[diceNum[5]]}}" mode="aspectFit" class="dice"></image>
+                <image src="../../images/diceback.gif" mode="aspectFit" class="testback"></image>
+            </view>
+        </view>
+        <view class="dice-four">
+            <view class="dicebox">
+                <image src="{{diceAddr[diceNum[6]]}}" mode="aspectFit" class="dice"></image>
+                <image src="../../images/diceback.gif" mode="aspectFit" class="testback"></image>
+            </view>
+        </view>
+        <view class="playernumbox">
+            <view class="playernum">
+                <text style="font-size: 56rpx;font-weight: 600;color: rgb(70, 70, 70);height: 60rpx;"> 玩家{{playernum}} </text>
+            </view>
+        </view>
+    </view>
+    <view class="startbtn-box">
+        <block wx:if="{{disabled}}">
+            <view class="startbtn-out" bindtap="verdict"></view>
+        </block>
+        <view class="headerbox">
+            <view class="header" catchtap="presentshow">
+                <image class="headericon" src="../../images/prize.png" mode="aspectFit"
+                    style="width: 60rpx;height: 60rpx;"> </image>
+                <text style="font-size: 28rpx;"> 礼物 </text>
+            </view>
+            <view class="header" catchtap="gameruler">
+                <image class="headericon" src="../../images/ruler2.png" mode="aspectFit"
+                    style="width: 60rpx;height: 60rpx;"> </image>
+                <text> 规则 </text>
+            </view>
+            <view class="header" catchtap="closeconfirm">
+                <image class="headericon" src="../../images/signout.png" mode="aspectFit"
+                    style="width: 60rpx;height: 60rpx;"> </image>
+                <text> 关闭游戏 </text>
+            </view>
+        </view>
+    </view>
+</view>
+
+
+<!-- 掷骰子结果弹窗界面 -->
+<block wx:if="{{resultIsShow}}">
+    <view class="showresult-box">
+        <view class="showresult-bg"></view>
+        <view class="showresult-toast">
+            <view class="showresult-bgin">
+                <view class="showresult-close">
+                    <button class="showresult-close-btn" catchtap="closeshowresult"></button>
+                </view>
+                <view class="prize-level">
+                    <text> {{level}} </text>
+                </view>
+                <view class="tianchong">
+                    <view class="dice-pbox">
+                        <image src="{{dicepAddr[diceNum[1]]}}" mode="aspectFit" class="dice-p"></image>
+                    </view>
+                    <view class="dice-pbox">
+                        <image src="{{dicepAddr[diceNum[2]]}}" mode="aspectFit" class="dice-p"></image>
+                    </view>
+                    <view class="dice-pbox">
+                        <image src="{{dicepAddr[diceNum[3]]}}" mode="aspectFit" class="dice-p"></image>
+                    </view>
+                    <view class="dice-pbox">
+                        <image src="{{dicepAddr[diceNum[4]]}}" mode="aspectFit" class="dice-p"></image>
+                    </view>
+                    <view class="dice-pbox">
+                        <image src="{{dicepAddr[diceNum[5]]}}" mode="aspectFit" class="dice-p"></image>
+                    </view>
+                    <view class="dice-pbox">
+                        <image src="{{dicepAddr[diceNum[6]]}}" mode="aspectFit" class="dice-p"></image>
+                    </view>
+                </view>
+                <view class="prize-detail">
+                    <text> {{prize}} </text>
+                </view>
+                <block class="状元可选奖品" wx:if="{{level=='状元'}}">
+                    <block class="状元">
+                        <view class="overnamebox">
+                            <text style="width: 45%;font-size: 36rpx;">剩余奖品数量: </text>
+                            <text style=" width: 20%; font-size: 36rpx;">{{totalpreNum[0]}} </text>
+                        </view>
+                        <scroll-view scroll-y class="overscroll1" scroll-top>
+                            <view class="overouterbox" wx:for="{{Onepre}}" wx:key="index">
+                                <view class="overimgbox">
+                                    <image src="{{item}}" mode="aspectFit" class="overimg"></image>
+                                </view>
+                                <view class="overpresentbox">
+                                    <text>{{OnepreName[index]}}</text>
+                                </view>
+                            </view>
+                        </scroll-view>
+                    </block>
+                </block>
+                <block class="榜眼可选奖品" wx:if="{{level=='榜眼'}}">
+                    <block class="榜眼">
+                        <view class="overnamebox">
+                            <text style="width: 45%;font-size: 36rpx;">剩余奖品数量: </text>
+                            <text style=" width: 20%; font-size: 36rpx;">{{totalpreNum[1]}} </text>
+                        </view>
+                        <scroll-view scroll-y class="overscroll1" scroll-top>
+                            <view class="overouterbox" wx:for="{{Twopre}}" wx:key="index">
+                                <view class="overimgbox">
+                                    <image src="{{item}}" mode="aspectFit" class="overimg"></image>
+                                </view>
+                                <view class="overpresentbox">
+                                    <text>{{TwopreName[index]}}</text>
+                                </view>
+                            </view>
+                        </scroll-view>
+                    </block>
+                </block>
+                <block class="探花可选奖品" wx:if="{{level=='探花'}}">
+                    <block class="探花">
+                        <view class="overnamebox">
+                            <text style="width: 45%;font-size: 36rpx;">剩余奖品数量: </text>
+                            <text style=" width: 20%; font-size: 36rpx;">{{totalpreNum[2]}} </text>
+                        </view>
+                        <scroll-view scroll-y class="overscroll1" scroll-top>
+                            <view class="overouterbox" wx:for="{{Threepre}}" wx:key="index">
+                                <view class="overimgbox">
+                                    <image src="{{item}}" mode="aspectFit" class="overimg"></image>
+                                </view>
+                                <view class="overpresentbox">
+                                    <text>{{ThreepreName[index]}}</text>
+                                </view>
+                            </view>
+                        </scroll-view>
+                    </block>
+                </block>
+                <block class="进士可选奖品" wx:if="{{level=='进士'}}">
+                    <block class="进士">
+                        <view class="overnamebox">
+                            <text style="width: 45%;font-size: 36rpx;">剩余奖品数量: </text>
+                            <text style=" width: 20%; font-size: 36rpx;">{{totalpreNum[3]}} </text>
+                        </view>
+                        <scroll-view scroll-y class="overscroll1" scroll-top>
+                            <view class="overouterbox" wx:for="{{Fourpre}}" wx:key="index">
+                                <view class="overimgbox">
+                                    <image src="{{item}}" mode="aspectFit" class="overimg"></image>
+                                </view>
+                                <view class="overpresentbox">
+                                    <text>{{FourpreName[index]}}</text>
+                                </view>
+                            </view>
+                        </scroll-view>
+                    </block>
+                </block>
+                <block class="举人可选奖品" wx:if="{{level=='举人'}}">
+                    <block class="举人">
+                        <view class="overnamebox">
+                            <text style="width: 45%;font-size: 36rpx;">剩余奖品数量: </text>
+                            <text style=" width: 20%; font-size: 36rpx;">{{totalpreNum[4]}} </text>
+                        </view>
+                        <scroll-view scroll-y class="overscroll1" scroll-top>
+                            <view class="overouterbox" wx:for="{{Fivepre}}" wx:key="index">
+                                <view class="overimgbox">
+                                    <image src="{{item}}" mode="aspectFit" class="overimg"></image>
+                                </view>
+                                <view class="overpresentbox">
+                                    <text>{{FivepreName[index]}}</text>
+                                </view>
+                            </view>
+                        </scroll-view>
+                    </block>
+                </block>
+                <block class="秀才可选奖品" wx:if="{{level=='秀才'}}">
+                    <block class="秀才">
+                        <view class="overnamebox">
+                            <text style="width: 45%;font-size: 36rpx;">剩余奖品数量: </text>
+                            <text style=" width: 20%; font-size: 36rpx;">{{totalpreNum[5]}} </text>
+                        </view>
+                        <scroll-view scroll-y class="overscroll1" scroll-top>
+                            <view class="overouterbox" wx:for="{{Sixpre}}" wx:key="index">
+                                <view class="overimgbox">
+                                    <image src="{{item}}" mode="aspectFit" class="overimg"></image>
+                                </view>
+                                <view class="overpresentbox">
+                                    <text>{{SixpreName[index]}}</text>
+                                </view>
+                            </view>
+                        </scroll-view>
+                    </block>
+                </block>
+            </view>
+        </view>
+    </view>
+</block>
+
+<!-- 规则弹窗界面 -->
+<block wx:if="{{rulerIsShow}}">
+    <view class="showruler-box">
+        <view class="showruler-bg"></view>
+        <view class="showruler-toast">
+            <view class="closetoast" catchtap="closeshowruler"></view>
+        </view>
+    </view>
+</block>
+
+<!-- 关闭游戏 确认界面 -->
+<block wx:if="{{closeconIsShow}}">
+    <view class="showclosecon-box">
+        <view class="showclosecon-bg"></view>
+        <view class="showclosecon-toast">
+            <view class="textbox">
+                <text style="font-size: 50rpx;"> 确认退出游戏 </text>
+            </view>
+            <view class="conbox">
+                <view class="conn" catchtap="closeshowclosecon">
+                    <text style="font-size: 40rpx; color: red;"> 取消 </text>
+                </view>
+                <navigator class="conn" catchtap="confirmshowclosecon" url="../../pages/homepage/homepage"
+                    open-type="reLaunch">
+                    <text style="font-size: 40rpx; color: green;"> 确定 </text>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</block>
+
+<!-- 礼物及剩余量弹窗 -->
+<block wx:if="{{presentIsShow}}">
+    <view class="showpresent-box">
+        <view class="showpresent-bg"></view>
+        <view class="closeshowpre">
+            <image class="closeshowprein" src="../../images/closeicon.png" mode="aspectFit" catchtap="closeshowPre">
+            </image>
+        </view>
+        <scroll-view class="showpresent-toast" scroll-y scroll-top>
+            <block class="状元">
+                <view class="namebox">
+                    <text style="width: 20%; font-weight: 600;font-size: 42rpx;"> 状元 </text>
+                    <text style="width: 45%;font-size: 36rpx;">剩余奖品数量: </text>
+                    <text style=" width: 20%; background-color: whitesmoke; font-size: 36rpx;"> {{totalpreNum[0]}}
+                    </text>
+                </view>
+                <scroll-view scroll-y class="scroll1" scroll-top>
+                    <view class="outerbox" wx:for="{{Onepre}}" wx:key="index">
+                        <view class="imgbox">
+                            <image src="{{item}}" mode="aspectFit" class="img"></image>
+                        </view>
+                        <view class="presentbox">
+                            <text>{{OnepreName[index]}}</text>
+                        </view>
+                    </view>
+                </scroll-view>
+            </block>
+
+            <block class="榜眼">
+                <view class="namebox">
+                    <text style="width: 20%; font-weight: 600;font-size: 42rpx;"> 榜眼 </text>
+                    <text style="width: 45%;font-size: 36rpx;">剩余奖品数量: </text>
+                    <text style=" width: 20%; background-color: whitesmoke; font-size: 36rpx;"> {{totalpreNum[1]}}
+                    </text>
+                </view>
+                <scroll-view scroll-y class="scroll1" scroll-top>
+                    <view class="outerbox" wx:for="{{Twopre}}" wx:key="index">
+                        <view class="imgbox">
+                            <image src="{{item}}" mode="aspectFit" class="img"></image>
+                        </view>
+                        <view class="presentbox">
+                            <text>{{TwopreName[index]}}</text>
+                        </view>
+                    </view>
+                </scroll-view>
+            </block>
+
+            <block class="探花">
+                <view class="namebox">
+                    <text style="width: 20%; font-weight: 600;font-size: 42rpx;"> 探花 </text>
+                    <text style="width: 45%;font-size: 36rpx;">剩余奖品数量: </text>
+                    <text style=" width: 20%; background-color: whitesmoke; font-size: 36rpx;"> {{totalpreNum[2]}}
+                    </text>
+                </view>
+                <scroll-view scroll-y class="scroll1" scroll-top>
+                    <view class="outerbox" wx:for="{{Threepre}}" wx:key="index">
+                        <view class="imgbox">
+                            <image src="{{item}}" mode="aspectFit" class="img"></image>
+                        </view>
+                        <view class="presentbox">
+                            <text>{{ThreepreName[index]}}</text>
+                        </view>
+                    </view>
+                </scroll-view>
+            </block>
+
+            <block class="进士">
+                <view class="namebox">
+                    <text style="width: 20%; font-weight: 600;font-size: 42rpx;"> 进士 </text>
+                    <text style="width: 45%;font-size: 36rpx;">剩余奖品数量: </text>
+                    <text style=" width: 20%; background-color: whitesmoke; font-size: 36rpx;"> {{totalpreNum[3]}}
+                    </text>
+                </view>
+                <scroll-view scroll-y class="scroll1" scroll-top>
+                    <view class="outerbox" wx:for="{{Fourpre}}" wx:key="index">
+                        <view class="imgbox">
+                            <image src="{{item}}" mode="aspectFit" class="img"></image>
+                        </view>
+                        <view class="presentbox">
+                            <text>{{FourpreName[index]}}</text>
+                        </view>
+                    </view>
+                </scroll-view>
+            </block>
+
+            <block class="举人">
+                <view class="namebox">
+                    <text style="width: 20%; font-weight: 600;font-size: 42rpx;"> 举人 </text>
+                    <text style="width: 45%;font-size: 36rpx;">剩余奖品数量: </text>
+                    <text style=" width: 20%; background-color: whitesmoke; font-size: 36rpx;"> {{totalpreNum[4]}}
+                    </text>
+                </view>
+                <scroll-view scroll-y class="scroll1" scroll-top>
+                    <view class="outerbox" wx:for="{{Fivepre}}" wx:key="index">
+                        <view class="imgbox">
+                            <image src="{{item}}" mode="aspectFit" class="img"></image>
+                        </view>
+                        <view class="presentbox">
+                            <text>{{FivepreName[index]}}</text>
+                        </view>
+                    </view>
+                </scroll-view>
+            </block>
+
+            <block class="秀才">
+                <view class="namebox">
+                    <text style="width: 20%; font-weight: 600;font-size: 42rpx;"> 秀才 </text>
+                    <text style="width: 45%;font-size: 36rpx;">剩余奖品数量: </text>
+                    <text style=" width: 20%; background-color: whitesmoke; font-size: 36rpx;"> {{totalpreNum[5]}}
+                    </text>
+                </view>
+                <scroll-view scroll-y class="scroll1" scroll-top>
+                    <view class="outerbox" wx:for="{{Sixpre}}" wx:key="index">
+                        <view class="imgbox">
+                            <image src="{{item}}" mode="aspectFit" class="img"></image>
+                        </view>
+                        <view class="presentbox">
+                            <text>{{SixpreName[index]}}</text>
+                        </view>
+                    </view>
+                </scroll-view>
+            </block>
+
+            <view class="nameboxmin"></view>
+        </scroll-view>
+    </view>
+</block>
+
+<!-- 游戏结束弹窗 -->
+<block wx:if="{{gameoverIsShow}}">
+    <view class="showgameover-box">
+        <view class="showgameover-bg"></view>
+        <view class="showgameover-toast">
+            <view class="gameoverbox">
+                <text style="font-size: 50rpx;color: whitesmoke; font-weight: 600;">游戏结束</text>
+            </view>
+            <navigator url="../../pages/homepage/homepage" class="quitgame" open-type="reLaunch">
+                <text style="font-size: 42rpx;">退出游戏</text>
+            </navigator>
+        </view>
+    </view>
+</block>
